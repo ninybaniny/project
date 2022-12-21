@@ -1,0 +1,75 @@
+﻿<Window x:Class="WpfApp222.Game"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp222"
+        mc:Ignorable="d"
+        KeyDown="Window_KeyDown"
+        Title="Game" Height="450" Width="560">
+    <Grid Background="White">
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="FontWeight" Value="Bold"/>
+            </Style>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="450"/>
+            <ColumnDefinition Width="110"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="0" Background="BlueViolet"/>
+
+        <Border x:Name="rightBorder" Grid.Column="1" Background="White" Margin="0,0,0,382">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Grid.Column="0" Text="Key: " 
+                       FontSize="18"/>
+                    <TextBlock Grid.Column="1" Text="{Binding Score}" FontSize="18"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+
+        <Viewbox Grid.Column="0">
+            <ItemsControl x:Name="ic">
+                <ItemsControl.Background>
+                    <ImageBrush ImageSource="images/bkg.png"/>
+                </ItemsControl.Background>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <ItemsControl ItemsSource="{Binding}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Horizontal"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate DataType="{x:Type local:Cell}">
+                                    <Border Width="30" Height="30" Background="{Binding Bkg}">
+                                        <Image Source="{Binding File}" />
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Viewbox>
+        <Label Content="ВЫХОД" HorizontalAlignment="Left" Margin="447,161,0,0" VerticalAlignment="Top" Width="132" Height="67" RenderTransformOrigin="0.5,0.5" FontSize="20" Grid.ColumnSpan="2">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.546"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+
+
+    </Grid>
+</Window>

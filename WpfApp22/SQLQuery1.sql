@@ -1,0 +1,5 @@
+﻿Insert into Prepodat(Фамилия, Имя, Отчество) values (N'Васильев', N'Роман', N'Антонович')
+Insert into Prepodat(Фамилия, Имя, Отчество) values (N'Васильев', N'Роман', N'Антонович')
+Insert into Prepodat(Фамилия, Имя, Отчество) values (N'Васильев', N'Роман', N'Антонович')
+Insert into Prepodat(Фамилия, Имя, Отчество) values (N'Васильев', N'Роман', N'Антонович')
+Insert into Prepodat(Фамилия, Имя, Отчество) values (N'Васильев', N'Роман', N'Антонович')
